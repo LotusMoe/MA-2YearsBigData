@@ -1,7 +1,5 @@
 import scrapy
 from scrapy.selector import Selector
-import json
-import re
 
 class QuotesSpider(scrapy.Spider):
     name = "quotes"
@@ -14,7 +12,7 @@ class QuotesSpider(scrapy.Spider):
     def parse(self, response):
         sel = Selector(response)
         status = sel.re_first('status":(.*?),')
-        print(status)
+        # print(status)
 
         if (int(status) == 0):
 
